@@ -78,7 +78,7 @@ function Profile(){
             handleclosePW()
         }
         else{
-            toast.warning('Passwords entered are not the same!')
+            toast.error('Passwords entered are not the same!')
         }
       }
 

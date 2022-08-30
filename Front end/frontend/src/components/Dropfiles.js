@@ -9,13 +9,15 @@ function Dropfiles(){
       const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
 
     return(
-        <div style={{color:'white'}} {...getRootProps()}>
-            <input {...getInputProps()} />
-            {
-                isDragActive ?
-                <p>Drop the files here ...</p> :
-                <p>Drag 'n' drop some files here, or click to select files</p>
-            }
+        <div className='test'>
+            <div style={{color:'black'}} {...getRootProps()}>
+                <input {...getInputProps()} />
+                {
+                    isDragActive ?
+                    <p>Drop the files here ...</p> :
+                    <p>Drop files here, or click to select files</p>
+                }
+            </div>
         </div>
     )
 }

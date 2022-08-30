@@ -1,5 +1,5 @@
 import React from 'react'
-import 'animate.css';
+/* import 'animate.css'; */
 
 function Home(){
 
@@ -20,7 +20,7 @@ function Home(){
     }
     
   window.addEventListener("scroll", reveal);
-  
+
 return(
     <div>
       <div>
