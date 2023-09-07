@@ -4,20 +4,20 @@ import React from 'react'
 function Home(){
 
   function reveal() {
-      var reveals = document.querySelectorAll(".reveal");
-    
-      for (var i = 0; i < reveals.length; i++) {
-        var windowHeight = window.innerHeight;
-        var elementTop = reveals[i].getBoundingClientRect().top;
-        var elementVisible = 150;
-    
-        if (elementTop < windowHeight - elementVisible) {
-          reveals[i].classList.add("active");
-        } else {
-          reveals[i].classList.remove("active");
-        }
+    var reveals = document.querySelectorAll(".reveal");
+  
+    for (var i = 0; i < reveals.length; i++) {
+      var windowHeight = window.innerHeight;
+      var elementTop = reveals[i].getBoundingClientRect().top;
+      var elementVisible = 150;
+  
+      if (elementTop < windowHeight - elementVisible) {
+        reveals[i].classList.add("active");
+      } else {
+        reveals[i].classList.remove("active");
       }
     }
+  }
     
   window.addEventListener("scroll", reveal);
 
@@ -39,7 +39,7 @@ return(
             <img src='img1.jpg' className='mainpageimg-right1'/>
             </div>
         </div>
-      </div >
+      </div>
       <div>
         <p style={{opacity:'0%'}}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
@@ -49,17 +49,17 @@ return(
       </div>
         <div className='container reveal'>
           <div className='bodytext-right'>
-              <header className='header'> Why join NTUGE?</header>
-              <p>The NTU Guitar Ensemble welcomes anyone interested in advancing their guitar skills with a group of likeminded individuals who have a passion in music and the guitar.
-                At the end of each year, all members will perform together as an ensemble for the annual concert. Furthermore, guitars are provided so you don’t need to bring your own!</p>
+            <header className='header'> Why join NTUGE?</header>
+            <p>The NTU Guitar Ensemble welcomes anyone interested in advancing their guitar skills with a group of likeminded individuals who have a passion in music and the guitar.
+              At the end of each year, all members will perform together as an ensemble for the annual concert. Furthermore, guitars are provided so you don’t need to bring your own!</p>
             <h1>Training Schedules</h1>
             <h2>Monday and Wednesdays</h2>
             <p>1900 - 2200 hrs</p>
           </div>
           <div className='imgcontainer-picture'>
-            <img src='test.png' className='mainpageimg-left1'/>
+          <img src='test.png' className='mainpageimg-left1'/>
         </div>
-        </div>
+      </div>
     </div>
 )
 }

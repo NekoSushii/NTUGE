@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { DndProvider } from 'react-dnd'
+import { HTML5Backend } from 'react-dnd-html5-backend'
 
 import Login from './components/Login'
 import Home from './components/Home'
@@ -10,6 +12,7 @@ import Profile from './components/Profile'
 import Repository from './components/Repository';
 import Dropfiles from './components/Dropfiles'
 import Arrange from './components/Arrange'
+import Chess from './components/Chess/Chess'
 
 
 function App() {
@@ -65,10 +68,14 @@ function App() {
         <li className='navitem_float_left'>
           <Link to={'/'} className='navlink'>Home</Link>
         </li>
+        <li className='navitem_float_left'>
+          <Link to={'chess'} className='navlink'>Chess</Link>
+        </li>
         {loginchecking()}
       </div>
       <div className='bg'>
         <div className='maincon'>
+        <DndProvider backend={HTML5Backend}>
           <Routes>
             <Route exact path='/' element={<Home/>}/>
             <Route exact path='/login' element={<Login/>}/>
@@ -76,7 +83,9 @@ function App() {
             <Route exact path='/repository' element={<Repository/>}/>
             <Route path='/arrange-scores' element={<Arrange/>}/>
             <Route path='/dropfiles' element={<Dropfiles/>}/>
+            <Route path='/chess' element={<Chess/>}/>
           </Routes>
+          </DndProvider>
         </div>
       </div>
       <div className='footer'>

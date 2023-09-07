@@ -17,6 +17,9 @@ function Login(){
 
     useEffect(()=>{
         async function fetchstuff(){
+            // let stuff = await getDocs(collection(db,'NTUGE')).docs
+            // console.log(stuff.map((val,key)=>{
+            // }))
             await getDocs(collection(db,'NTUGE'))
             .then(response=>{
                 let temp = response.docs.map((val,key)=>({data: val.data()}))
@@ -47,9 +50,9 @@ function Login(){
     async function handleLogin(formValue) {
         for(let i=0;i<loginlist.length;i++){
             if(loginlist[i] === formValue.username){
-                console.log(i)
+                console.log(i,'i')
                 console.log(md5(formValue.password))
-                console.log(loginPW[i])
+                console.log(loginPW[i],'login pw')
                 if(md5(formValue.password) === loginPW[i]){
                     sessionStorage.setItem('username', formValue.username)
                 sessionStorage.setItem('name', logindetails[i])
